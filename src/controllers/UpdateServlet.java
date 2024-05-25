@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
@@ -77,6 +78,7 @@ public class UpdateServlet extends HttpServlet {
 
             // indexページへリダイレクト
             response.sendRedirect(request.getContextPath() + "/index");
-        }
+        }}
     }
-}}
+
+    }

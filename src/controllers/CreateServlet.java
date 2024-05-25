@@ -2,6 +2,7 @@ package controllers;
 
 import java.io.IOException;
 import java.sql.Timestamp;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
@@ -11,11 +12,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import antlr.collections.List;
 import models.Message;
 import models.validators.MessageValidator;
 import util.DBUtil;
-
 /**
  * Servlet implementation class CreateServlet
  */
@@ -49,6 +48,7 @@ public class CreateServlet extends HttpServlet {
 
             Timestamp currentTime = new Timestamp(System.currentTimeMillis());
             m.setCreated_at(currentTime);
+            m.setUpdated_at(currentTime);
 
          // バリデーションを実行してエラーがあったら新規登録のフォームに戻る
             List<String> errors = MessageValidator.validate(m);
